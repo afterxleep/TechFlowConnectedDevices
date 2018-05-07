@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, MotionAware {
-    
+struct Message: Codable {
+    let name: String?
+    let pitch: Double?
+    let roll: Double?
+}
+
+class ViewController: UIViewController, MotionAware, SocketDelegate {
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var actionBtn: UIButton!
     @IBOutlet weak var pitchTxt: UITextField!
@@ -17,6 +22,10 @@ class ViewController: UIViewController, MotionAware {
     
     lazy var motionManager = {
         return MotionManager(withInterval: 10.0, andDelegate: self)
+    }()
+    
+    lazy var socket = {
+        return SocketManager(withUrl: "http://172.17.225.199:8080", andDelegate: self)
     }()
     
     override func viewDidLoad() {
@@ -37,22 +46,48 @@ class ViewController: UIViewController, MotionAware {
             return
         }
         
-        // Start & Stop monitorion
+        // Start & Stop monitoring and update the UI
         if(!motionManager.isActive()) {
             actionBtn.setTitle("Stop", for: .normal)
+            socket.connect()
+            motionManager.startMotionUpdates()
+            
+            
         }
         else {
             actionBtn.setTitle("Start", for: .normal)
             motionManager.stopMotionUpdates()
+            socket.disconnect()
         }
     }
     
-    // MARK - MotionAwareDelegate
+    
+    // MARK: MotionAware Delegate Methods
     func onNewMotionData(attitude: (pitch: Double, roll: Double, yaw: Double)) {        
         pitchTxt.text =  attitude.pitch.description
         rollTxt.text = attitude.roll.description
+        
+        if(socket.isConnected()) {
+            let message = Message(name: self.nameTxt.text,
+                                  pitch: attitude.pitch,
+                                  roll: attitude.roll)
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try! jsonEncoder.encode(message)
+            socket.writeMessage(message: String(data: jsonData, encoding: .utf8)!)
+        }
     }
-
-
+    
+    // MARK: Socket Delegate Methods
+    func onSocketConnected() {
+        print("Socket Connected Successfully")
+    }
+    
+    func onSocketDisconnected(error: Error?) {
+        print("Socket disconnected: Error \(error!)" )
+    }
+    
+    func onSocketMessageReceived(message: String) {
+        print(message)
+    }
 }
 

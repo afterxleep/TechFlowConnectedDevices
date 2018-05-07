@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9902F5E20A0C31F0045C8CE /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902F5D20A0C31F0045C8CE /* MotionManager.swift */; };
+		A9BB3E4920A0F6CC00F798D0 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB3E4820A0F6CC00F798D0 /* SocketManager.swift */; };
 		A9BF8C0F20A0AB2A00451C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF8C0E20A0AB2A00451C8A /* AppDelegate.swift */; };
 		A9BF8C1120A0AB2A00451C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF8C1020A0AB2A00451C8A /* ViewController.swift */; };
 		A9BF8C1420A0AB2A00451C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF8C1220A0AB2A00451C8A /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		7F88737C304E46A2B7109C72 /* Pods_swiftSocketGyro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftSocketGyro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79F1F5ECF16044FCBF82B9 /* Pods-swiftSocketGyro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftSocketGyro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftSocketGyro/Pods-swiftSocketGyro.debug.xcconfig"; sourceTree = "<group>"; };
 		A9902F5D20A0C31F0045C8CE /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		A9BB3E4820A0F6CC00F798D0 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		A9BF8C0B20A0AB2A00451C8A /* swiftSocketGyro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftSocketGyro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF8C0E20A0AB2A00451C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BF8C1020A0AB2A00451C8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				A9BF8C0E20A0AB2A00451C8A /* AppDelegate.swift */,
 				A9BF8C1020A0AB2A00451C8A /* ViewController.swift */,
 				A9902F5D20A0C31F0045C8CE /* MotionManager.swift */,
+				A9BB3E4820A0F6CC00F798D0 /* SocketManager.swift */,
 				A9BF8C1220A0AB2A00451C8A /* Main.storyboard */,
 				A9BF8C1520A0AB2A00451C8A /* Assets.xcassets */,
 				A9BF8C1720A0AB2A00451C8A /* LaunchScreen.storyboard */,
@@ -102,6 +105,7 @@
 				A9BF8C0720A0AB2A00451C8A /* Sources */,
 				A9BF8C0820A0AB2A00451C8A /* Frameworks */,
 				A9BF8C0920A0AB2A00451C8A /* Resources */,
+				7944DA45A03939A4813762F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +164,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7944DA45A03939A4813762F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-swiftSocketGyro/Pods-swiftSocketGyro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swiftSocketGyro/Pods-swiftSocketGyro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E98510730154E8A568965635 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +209,7 @@
 			files = (
 				A9902F5E20A0C31F0045C8CE /* MotionManager.swift in Sources */,
 				A9BF8C1120A0AB2A00451C8A /* ViewController.swift in Sources */,
+				A9BB3E4920A0F6CC00F798D0 /* SocketManager.swift in Sources */,
 				A9BF8C0F20A0AB2A00451C8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,13 +37,13 @@ class MotionManager {
     }
     
     // Start Gyroscope Updates
-    func startMotionUpdates() -> Bool {
+    func startMotionUpdates() {
         if motion.isDeviceMotionAvailable {
             motion.deviceMotionUpdateInterval = updateInterval / 60.0
             motion.startDeviceMotionUpdates()
             
             // Configure a timer to fetch the accelerometer data.
-            timer = Timer(fire: Date(), interval: (updateInterval/60.0),
+            timer = Timer(fire: Date(), interval: (updateInterval / 60.0),
                repeats: true, block: { (timer) in
                 // Get the gyro data.
                 if let data = self.motion.deviceMotion?.attitude {
@@ -57,10 +57,7 @@ class MotionManager {
             
             // Add the timer to the current run loop.
             RunLoop.current.add(timer!, forMode: .defaultRunLoopMode)
-            return true
-            
         }
-        return false
     }
     
     // Stop Gyroscope updates
