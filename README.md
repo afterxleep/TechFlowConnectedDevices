@@ -41,7 +41,7 @@ pod install
  
 * Open the swiftSocketGyro.xcworkspace project on Xcode 9
 
-* Edit the server IP address 
+* Edit the server IP address in Config.swift to match your laptop IP
 
 
 
