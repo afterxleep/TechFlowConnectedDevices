@@ -75,6 +75,7 @@
 		A9BF8C0D20A0AB2A00451C8A /* swiftSocketGyro */ = {
 			isa = PBXGroup;
 			children = (
+				D68FD01C20CC0A7700AD4EC3 /* Config.swift */,
 				A9BF8C0E20A0AB2A00451C8A /* AppDelegate.swift */,
 				A9BF8C1020A0AB2A00451C8A /* ViewController.swift */,
 				A9902F5D20A0C31F0045C8CE /* MotionManager.swift */,
@@ -83,7 +84,6 @@
 				A9BF8C1520A0AB2A00451C8A /* Assets.xcassets */,
 				A9BF8C1720A0AB2A00451C8A /* LaunchScreen.storyboard */,
 				A9BF8C1A20A0AB2A00451C8A /* Info.plist */,
-				D68FD01C20CC0A7700AD4EC3 /* Config.swift */,
 			);
 			path = swiftSocketGyro;
 			sourceTree = "<group>";
