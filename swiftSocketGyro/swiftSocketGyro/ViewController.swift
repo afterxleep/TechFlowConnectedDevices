@@ -21,11 +21,11 @@ class ViewController: UIViewController, MotionAware, SocketDelegate {
     @IBOutlet weak var rollTxt: UITextField!
     
     lazy var motionManager = {
-        return MotionManager(withInterval: 10.0, andDelegate: self)
+        return MotionManager(withInterval: Config.gyroUpdateInterval, andDelegate: self)
     }()
     
     lazy var socket = {
-        return SocketManager(withUrl: "http://172.17.225.199:8080", andDelegate: self)
+        return SocketManager(withUrl: Config.serverURL, andDelegate: self)
     }()
     
     override func viewDidLoad() {
@@ -83,7 +83,11 @@ class ViewController: UIViewController, MotionAware, SocketDelegate {
     }
     
     func onSocketDisconnected(error: Error?) {
-        print("Socket disconnected: Error \(error!)" )
+        guard let e = error else {
+            print("Socket disconnected without error")
+            return
+        }
+        print("Socket disconnected: Error \(e)" )
     }
     
     func onSocketMessageReceived(message: String) {

@@ -6,6 +6,6 @@ target 'swiftSocketGyro' do
   use_frameworks!
 
   # Pods for swiftSocketGyro
-  pod 'Starscream'
+  pod 'Starscream'  
 
 end

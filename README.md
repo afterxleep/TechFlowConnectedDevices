@@ -9,9 +9,22 @@ This project requires the following dependencies.
 - **[CocoaPods](https://cocoapods.org)** (a dependency manager for Swift and Objective-C)
 
 - **A Socket Server** (Sample provided in the repo)
+  
+     
+## Setup/Start the Socket Server
+
+A sample socket server written in ruby is provided in this example.  This server echoes back every message received, to start it.
+
+```
+cd server
+gem install em-websocket
+ruby server.rb
+```
 
 
-## Setting Up
+## Setting Up the iOS Project
+
+* Make Sure you have the latest version of Xcode (9.4 or higher).
 
 * Install CocoaPods by running this command on your teminal
 
@@ -22,9 +35,14 @@ sudo gem install cocoapods
 * Install dependencies via CocoaPods, by running this command on your terminal (when in the project path)
 
 ```
+cd swiftSocketGyro
 pod install
 ```
+ 
+* Open the swiftSocketGyro.xcworkspace project on Xcode 9
 
-* Open the swiftSocketGyro.xcworkspace project on Xcode 9 or higher, connect your device and run.
+* Edit the server IP address 
+
+
 
 **Note:**. Hardware Motion Sensors are not available on the iOS simulator.  You'll ned a real device to test this out.
