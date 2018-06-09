@@ -1,5 +1,5 @@
-# swiftSocketGyro
-A quick example to learn how to use the deviceMotion hardware on iOS, and transmit its data in real time over the internet via websockets.
+# TechFlow - Connected Devices
+A quick example to learn how to use the deviceMotion hardware on iOS, and transmit its data in real time over the internet via websockets to a reactJS Client
 
 ## Dependencies
 This project requires the following dependencies.
@@ -8,9 +8,11 @@ This project requires the following dependencies.
 
 - **[CocoaPods](https://cocoapods.org)** (a dependency manager for Swift and Objective-C)
 
+- **[ReactJS](https://reactjs.org)**
+
 - **A Socket Server** (Sample provided in the repo)
-  
-     
+
+
 ## Setup/Start the Socket Server
 
 A sample socket server written in ruby is provided in this example.  This server echoes back every message received, to start it.
@@ -38,11 +40,11 @@ sudo gem install cocoapods
 cd swiftSocketGyro
 pod install
 ```
- 
+
 * Open the swiftSocketGyro.xcworkspace project on Xcode 9
 
 * Edit the server IP address in Config.swift to match your laptop IP
 
-
-
 **Note:**. Hardware Motion Sensors are not available on the iOS simulator.  You'll ned a real device to test this out.
+
+## Setting Up the React Project
