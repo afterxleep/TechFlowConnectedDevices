@@ -7,6 +7,6 @@
 //
 
 struct Config {
-    static let serverURL = "ws://your_server_url:port"
+    static let serverURL = "ws://96.126.123.134:3000"
     static let gyroUpdateInterval = 3.0
 }

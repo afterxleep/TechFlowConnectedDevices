@@ -9,6 +9,7 @@
 import UIKit
 
 struct Message: Codable {
+    let id: String?
     let name: String?
     let pitch: Double?
     let roll: Double?
@@ -68,7 +69,8 @@ class ViewController: UIViewController, MotionAware, SocketDelegate {
         rollTxt.text = attitude.roll.description
         
         if(socket.isConnected()) {
-            let message = Message(name: self.nameTxt.text,
+            let message = Message(id: UIDevice.current.identifierForVendor!.uuidString,
+                                  name: self.nameTxt.text,
                                   pitch: attitude.pitch,
                                   roll: attitude.roll)
             let jsonEncoder = JSONEncoder()
